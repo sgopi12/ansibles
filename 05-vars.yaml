@@ -1,14 +1,14 @@
 - name: demo on task level variables
-  hosts: localhost 
-  connection: local # it will not asl for user name and password
+  hosts: localhost
+  connection: local # it will not ask for username and password
   vars:
     COURSE: "Ansible"
-    TRAINER: "Gopi"
-    DURATION: "150 HRS"
-  task: 
-  - name: print "DevOps with AIOps"
-  vars:
-    COURSE: "DevsecOps with AIOps"
-  debug:
-   msg: "Hi, I am  Learning {{COURSE}}, Trainer is {{ TRAINER }}, Duration is {{ Duration}}"
-   
+    TRAINER: "sivakumar"
+    DURATION: "150HRS"
+  tasks:
+  - name: print information
+    vars:
+      COURSE: "DevSecOps with AIOps"
+    debug:
+      msg: "Hi, I am learning {{ COURSE }}, Trainer is {{ TRAINER }}, Duration is {{ DURATION }}"
+      
